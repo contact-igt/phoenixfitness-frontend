@@ -1,0 +1,120 @@
+.section {
+    padding: 8rem 0;
+    background-color: rgb(9, 9, 11);
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.highlight {
+    color: #BB0D06;
+    font-style: italic;
+}
+
+.grid {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.imageWrapper {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 0.125rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    border: 1px solid rgb(24, 24, 27);
+    filter: grayscale(100%);
+    transition: filter 0.7s ease;
+}
+
+.card:hover .imageWrapper {
+    filter: grayscale(0%);
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.05);
+}
+
+.overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, black, rgba(0, 0, 0, 0.2), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 2rem;
+}
+
+.badge {
+    background-color: #BB0D06;
+    color: white;
+    padding: 0.25rem 1rem;
+    font-size: 0.625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+    font-style: italic;
+}
+
+.name {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.875rem;
+    font-style: italic;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.result {
+    color: #BB0D06;
+    font-weight: 900;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.25rem;
+}
+
+.ctaWrapper {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: #BB0D06;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    text-decoration: none;
+    transition: gap 0.3s ease;
+}
+
+.cta:hover {
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

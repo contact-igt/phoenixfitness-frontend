@@ -1,0 +1,80 @@
+.section {
+    padding: 8rem 0;
+    background-color: rgb(9, 9, 11);
+}
+
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.highlight {
+    color: #BB0D06;
+    font-style: italic;
+}
+
+.grid {
+    display: grid;
+    gap: 3rem;
+}
+
+.card {
+    text-align: center;
+}
+
+.iconWrapper {
+    width: 5rem;
+    height: 5rem;
+    background-color: rgb(24, 24, 27);
+    border: 1px solid rgb(39, 39, 42);
+    border-radius: 0.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    transition: all 0.5s ease;
+}
+
+.card:hover .iconWrapper {
+    background-color: #BB0D06;
+    border-color: #BB0D06;
+}
+
+.icon {
+    color: #BB0D06;
+    transition: color 0.5s ease;
+}
+
+.card:hover .icon {
+    color: white;
+}
+
+.title {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.05em;
+}
+
+.description {
+    color: rgb(113, 113, 122);
+    font-size: 0.75rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

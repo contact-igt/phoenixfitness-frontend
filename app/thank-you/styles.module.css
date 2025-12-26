@@ -1,0 +1,270 @@
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(9, 9, 11);
+    color: white;
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 1.5rem;
+}
+
+.background {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.gradientOrb1 {
+    position: absolute;
+    top: -10%;
+    right: -10%;
+    width: 40rem;
+    height: 40rem;
+    background: radial-gradient(circle, rgba(187, 13, 6, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: float 8s ease-in-out infinite;
+}
+
+.gradientOrb2 {
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    width: 35rem;
+    height: 35rem;
+    background: radial-gradient(circle, rgba(127, 29, 29, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(60px);
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(20px, 20px);
+    }
+}
+
+.content {
+    position: relative;
+    z-index: 10;
+    max-width: 48rem;
+    width: 100%;
+    text-align: center;
+}
+
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.icon {
+    width: 5rem;
+    height: 5rem;
+    color: #BB0D06;
+    filter: drop-shadow(0 0 20px rgba(187, 13, 6, 0.5));
+}
+
+.heading {
+    font-family: 'Anton', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.02em;
+}
+
+.highlight {
+    background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subheading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(161, 161, 170);
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.message {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(187, 13, 6, 0.2);
+    border-radius: 0.25rem;
+    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.message p {
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: rgb(212, 212, 216);
+    margin-bottom: 1rem;
+}
+
+.message p:last-child {
+    margin-bottom: 0;
+    font-weight: 600;
+    color: white;
+}
+
+.nextSteps {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(187, 13, 6, 0.15);
+    border-radius: 0.25rem;
+    padding: 2.5rem 2rem;
+    margin-bottom: 3rem;
+}
+
+.nextStepsHeading {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+    color: #BB0D06;
+}
+
+.stepsList {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.stepNumber {
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
+    border-radius: 0.25rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    box-shadow: 0 4px 12px rgba(187, 13, 6, 0.3);
+}
+
+.stepContent h3 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25rem;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.05em;
+}
+
+.stepContent p {
+    color: rgb(161, 161, 170);
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.ctaWrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.ctaButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
+    padding: 1.25rem 2.5rem;
+    border-radius: 0.25rem;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 20px 25px -5px rgba(187, 13, 6, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.ctaButton::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgb(127, 29, 29), #BB0D06);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.ctaButton:hover {
+    box-shadow: 0 25px 50px -12px rgba(187, 13, 6, 0.5);
+    transform: translateY(-2px);
+}
+
+.ctaButton:hover::before {
+    opacity: 1;
+}
+
+.ctaButton:hover .arrow {
+    transform: translateX(4px);
+}
+
+.ctaButton>* {
+    position: relative;
+    z-index: 1;
+}
+
+.arrow {
+    transition: transform 0.3s ease;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .heading {
+        font-size: 4.5rem;
+    }
+
+    .stepsList {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .step {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        flex: 1;
+    }
+}
+
+@media (min-width: 1024px) {
+    .heading {
+        font-size: 5.5rem;
+    }
+
+    .icon {
+        width: 6rem;
+        height: 6rem;
+    }
+}
