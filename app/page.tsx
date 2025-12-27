@@ -35,8 +35,8 @@ export default function Home() {
       <Locations />
 
       {/* Social proof bar */}
-      <section className="py-20 bg-[#BB0D06] text-white">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
+      <section className="!py-20 bg-[#BB0D06] text-white">
+        <div className="max-w-7xl mx-auto !px-6 flex flex-col md:flex-row justify-between items-center gap-12 text-center md:text-left">
           <div className="max-w-lg">
             <h2 className="font-['Anton'] text-6xl uppercase leading-none italic mb-4">The #1 Rated Pride</h2>
             <p className="font-black text-white/80 uppercase tracking-widest">Bengaluru&apos;s elite fitness community since 2021.</p>
@@ -57,8 +57,8 @@ export default function Home() {
       </section>
 
       {/* FAQ */}
-      <section className="py-32 bg-zinc-950">
-        <div className="max-w-4xl mx-auto px-6">
+      <section className="!py-32 bg-zinc-950">
+        <div className="!flex flex-col max-w-4xl !mx-auto !px-6">
           <SectionHeading subtitle="No fluff, just facts.">
             Common <span className="text-[#BB0D06] italic">Questions</span>
           </SectionHeading>
