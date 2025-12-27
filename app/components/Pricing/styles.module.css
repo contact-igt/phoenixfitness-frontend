@@ -189,6 +189,60 @@
     background-color: rgb(185, 28, 28);
 }
 
+/* Small mobile devices - prevent overflow */
+@media (max-width: 380px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .branchButton {
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        letter-spacing: 0.05em;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
+
+    .cardPopular {
+        transform: scale(1);
+    }
+
+    .cardTitle {
+        font-size: 1.5rem;
+        word-break: break-word;
+    }
+
+    .price {
+        font-size: 2.5rem;
+    }
+
+    .originalPrice {
+        font-size: 1rem;
+    }
+
+    .ctaButton {
+        font-size: 1rem;
+        letter-spacing: 0.1em;
+        padding: 0.875rem;
+    }
+
+    .perkText {
+        font-size: 0.75rem;
+        letter-spacing: 0;
+    }
+
+    .perkSecondary {
+        font-size: 0.65rem;
+        letter-spacing: 0.05em;
+    }
+}
+
 @media (min-width: 768px) {
     .grid {
         grid-template-columns: repeat(2, 1fr);
