@@ -26,7 +26,7 @@ export default function Home() {
 
       <SuccessSteps />
 
-      <Transformations />
+      {/* <Transformations /> */}
 
       <Gallery />
 
