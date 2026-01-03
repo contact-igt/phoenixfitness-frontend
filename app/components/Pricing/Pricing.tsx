@@ -14,8 +14,9 @@ export default function Pricing() {
         <section id="pricing" className={styles.section}>
             <div className={styles.container}>
                 <SectionHeading subtitle="Limited Time Offer: Discounts that hit harder than leg day (+ Tax applicable)">
-                    2025 <span className={styles.highlight}>Year End Sale</span>
+                    2026  <span className={styles.highlight}> New Year - new beginning </span> sale
                 </SectionHeading>
+
 
                 <div className={styles.branchSelector}>
                     {BRANCHES.map(branch => (
