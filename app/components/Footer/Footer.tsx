@@ -44,8 +44,8 @@ export default function Footer() {
                             <li className={styles.contactItem}>
                                 <Mail size={16} /> INFO@PHOENIXFITNESS.COM
                             </li>
-                            <li className={styles.contactItem}>
-                                <Phone size={16} /> +91 999 000 1111
+                            <li className={styles.contactItem}   >
+                                <Phone size={16} /> +91 7795 537 297
                             </li>
                         </ul>
                     </div>

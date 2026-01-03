@@ -112,7 +112,8 @@ export default function Hero() {
         <section className={styles.hero}>
             <div className={styles.background}>
                 <img
-                    src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80"
+                    // src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80"
+                    src={"/assets/herobanner.webp"}
                     className={styles.backgroundImage}
                     alt="Gym"
                 />

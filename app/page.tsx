@@ -26,7 +26,7 @@ export default function Home() {
 
       <SuccessSteps />
 
-      {/* <Transformations /> */}
+      <Transformations />
 
       <Gallery />
 
@@ -73,7 +73,7 @@ export default function Home() {
 
       {/* WhatsApp Floating */}
       <motion.a
-        href="https://wa.me/919990001111"
+        href="https://wa.me/917795537297"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="fixed bottom-10 right-10 z-[100] bg-green-600 text-white p-5 rounded-full shadow-2xl shadow-green-600/20 hover:bg-green-700 transition-colors"
