@@ -27,8 +27,8 @@ export default function Transformations() {
                                 <img src={t.url} className={styles.image} alt={t.name} />
                                 <div className={styles.overlay}>
                                     <div className={styles.badge}>Transformation</div>
-                                    <h4 className={styles.name}>{t.name}</h4>
-                                    <p className={styles.result}>{t.result}</p>
+                                    {/* <h4 className={styles.name}>{t.name}</h4>
+                                    <p className={styles.result}>{t.result}</p> */}
                                 </div>
                             </div>
                         </motion.div>
