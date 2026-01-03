@@ -85,7 +85,8 @@ export const BRANCHES: Branch[] = [
 export const GALLERY_IMAGES: GalleryImage[] = [
   { id: 1, category: 'Strength', url: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800', title: 'Free Weights Zone' },
   { id: 2, category: 'Cardio', url: 'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?q=80&w=800', title: 'Treadmill Row' },
-  { id: 3, category: 'Recovery', url: 'https://images.unsplash.com/photo-1594411643194-9b65798935c1?q=80&w=800', title: 'Steam Room' },
+  // { id: 3, category: 'Recovery', url: 'https://images.unsplash.com/photo-1594411643194-9b65798935c1?q=80&w=800', title: 'Steam Room' },
+  { id: 3, category: 'Recovery', url: '/assets/steamroom.avif', title: 'Steam Room' },
   { id: 4, category: 'Strength', url: 'https://images.unsplash.com/photo-1593079831268-3381b0db4a77?q=80&w=800', title: 'Squat Racks' },
   { id: 5, category: 'Community', url: 'https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=800', title: 'CrossFit Session' },
   { id: 6, category: 'Cardio', url: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=800', title: 'Spinning Class' },
