@@ -90,7 +90,7 @@ export default function ThankYouPage() {
                             <div className={styles.stepNumber}>3</div>
                             <div className={styles.stepContent}>
                                 <h3>Start Training</h3>
-                                <p>Begin your transformation journey</p>
+                                <p>Get A free 1 Day Trial at your nearest Phoenix Gym. </p>
                             </div>
                         </div>
                     </div>
