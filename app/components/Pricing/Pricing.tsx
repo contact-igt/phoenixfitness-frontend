@@ -1,20 +1,37 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Zap, CheckCircle } from 'lucide-react';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import Button from '../Button/Button';
 import { BRANCHES } from '@/app/data/constants';
 import styles from './styles.module.css';
 
 export default function Pricing() {
     const [selectedBranch, setSelectedBranch] = useState(BRANCHES[0]);
 
+    // Listen for branch selection events dispatched by the Locations component
+    useEffect(() => {
+        const handleBranchSelect = (e: Event) => {
+            const { branchId } = (e as CustomEvent).detail;
+            const branch = BRANCHES.find(b => b.id === branchId);
+            if (branch) setSelectedBranch(branch);
+        };
+
+        window.addEventListener('selectPricingBranch', handleBranchSelect);
+        return () => window.removeEventListener('selectPricingBranch', handleBranchSelect);
+    }, []);
+
     return (
         <section id="pricing" className={styles.section}>
             <div className={styles.container}>
-                <SectionHeading subtitle="Limited Time Offer: Discounts that hit harder than leg day (+ Tax applicable)">
+                {/* <SectionHeading subtitle="Limited Time Offer: Discounts that hit harder than leg day (+ Tax applicable)">
                     2026  <span className={styles.highlight}> New Year - new beginning </span> sale
+                </SectionHeading> */}
+
+                <SectionHeading subtitle="Limited Time Offer: Discounts that hit harder than leg day (+ Tax applicable)">
+                    <span className={styles.highlight}> Summer Sale - </span> Get Your Summer Body
                 </SectionHeading>
 
 
@@ -65,11 +82,22 @@ export default function Pricing() {
                                 </div>
                             </div>
 
-                            <button className={`${styles.ctaButton} ${offer.popular ? styles.ctaButtonPopular : ''}`}>
-                                Join Now
-                            </button>
+                            <div className="mt-auto">
+                                <Button 
+                                    href={`#hero-form`}
+                                    className="w-full"
+                                    variant={offer.popular ? 'primary' : 'secondary'}
+                                >
+                                    Choose Plan
+                                </Button>
+                            </div>
                         </motion.div>
                     ))}
+                </div>
+                <div className={styles.ctaWrapper}>
+                    <Button href="#hero-form" size="lg">
+                        Claim Your Summer Offer
+                    </Button>
                 </div>
             </div>
         </section>

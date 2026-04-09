@@ -39,6 +39,7 @@
     padding-top: 5rem;
     padding-bottom: 5rem;
     align-items: center;
+    grid-template-columns: 1fr;
 }
 
 .badge {
@@ -57,13 +58,14 @@
 
 .heading {
     font-family: 'Anton', sans-serif;
-    font-size: 4.5rem;
+    font-size: clamp(3rem, 7vw, 5rem);
     font-weight: 900;
-    line-height: 0.9;
-    margin-bottom: 2rem;
+    line-height: 1;
+    margin-bottom: 1.5rem;
     text-transform: uppercase;
     font-style: italic;
 }
+
 
 .headingGradient {
     background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
@@ -76,129 +78,84 @@
     color: rgb(161, 161, 170);
     font-size: 1.25rem;
     font-weight: 500;
-    margin-bottom: 2.5rem;
     max-width: 32rem;
     line-height: 1.75;
     text-transform: uppercase;
     letter-spacing: -0.05em;
 }
 
-.features {
+.tickerWrapper {
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.ticker {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
+    gap: 2.5rem;
+    width: max-content;
+    animation: tickerScroll 20s linear infinite;
+}
+
+@keyframes tickerScroll {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.tickerItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
     color: rgb(113, 113, 122);
     font-weight: 900;
     text-transform: uppercase;
     font-size: 0.625rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.15em;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.feature {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.featureIcon {
+.tickerIcon {
     color: #BB0D06;
-    width: 1.25rem;
-    height: 1.25rem;
+    flex-shrink: 0;
 }
 
-.formCard {
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(24px);
-    border: 1px solid rgba(187, 13, 6, 0.2);
-    padding: 2.5rem;
-    border-radius: 0.125rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-}
-
-.formHeading {
-    font-family: 'Anton', sans-serif;
-    font-size: 1.875rem;
-    margin-bottom: 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    font-style: italic;
-    letter-spacing: 0.05em;
-}
-
-.form {
+.content {
     display: flex;
     flex-direction: column;
-    gap: 1.25rem;
+    justify-content: center;
+    gap: 3rem;
+    min-width: 0;
 }
 
-.input,
-.select {
+.textStack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ctaGroup {
+    margin-top: 2rem;
+}
+
+.formWrapper {
     width: 100%;
-    background-color: rgb(24, 24, 27);
-    border: 1px solid rgb(39, 39, 42);
-    border-radius: 0.125rem;
-    padding: 1rem 1.5rem;
-    color: white;
-    font-weight: 700;
-    outline: none;
-    transition: border-color 0.3s ease;
+    max-width: 32rem;
+    min-width: 0; /* Critical for grid stability */
 }
 
-.input::placeholder {
-    color: rgb(63, 63, 70);
-}
-
-.input:focus,
-.select:focus {
-    border-color: #BB0D06;
-}
-
-.select {
-    color: rgb(113, 113, 122);
-}
-
-.inputRow {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-}
-
-.submitButton {
-    width: 100%;
-    background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
-    padding: 1.25rem;
-    border-radius: 0.125rem;
-    font-family: 'Anton', sans-serif;
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: white;
-    border: none;
-    cursor: pointer;
-    box-shadow: 0 20px 25px -5px rgba(187, 13, 6, 0.2);
-    transition: all 0.3s ease;
-    transform: scale(1);
-}
-
-.submitButton:hover:not(:disabled) {
-    box-shadow: 0 25px 50px -12px rgba(187, 13, 6, 0.3);
-    transform: scale(1.02);
-}
-
-.submitButton:active:not(:disabled) {
-    transform: scale(0.98);
-}
-
-.submitButton:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-}
-
-.errorText {
-    color: #ef4444;
-    font-size: 0.75rem;
-    margin-top: 0.5rem;
-    font-weight: 600;
+@media (min-width: 1024px) {
+    .content {
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .textStack {
+        align-items: flex-start;
+        text-align: left;
+    }
 }
 
 @media (min-width: 1024px) {

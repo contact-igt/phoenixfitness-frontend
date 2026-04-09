@@ -1,5 +1,5 @@
 .section {
-    padding: 8rem 0;
+    padding: 5rem 0;
     background-color: #000;
 }
 
@@ -125,4 +125,29 @@
 
 .playIcon {
     fill: currentColor;
+}
+
+.ctaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.ctaLocation {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #71717a;
+    font-family: var(--font-anton);
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-style: italic;
+    text-decoration: none;
+    transition: color 0.3s ease, gap 0.3s ease;
+}
+
+.ctaLocation:hover {
+    color: #a1a1aa;
+    gap: 0.75rem;
 }

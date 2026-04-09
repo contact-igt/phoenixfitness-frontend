@@ -1,5 +1,5 @@
 .section {
-    padding: 8rem 0;
+    padding: 4rem 0;
     background-color: black;
 }
 
@@ -93,4 +93,10 @@
     .grid {
         grid-template-columns: repeat(4, 1fr);
     }
+}
+
+.ctaWrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 4rem;
 }
