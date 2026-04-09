@@ -59,7 +59,7 @@ export default function Home() {
 
         {/* Phone */}
         <motion.a
-          href="tel:+917795537297"
+          href="tel:+919880537297"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="transition-transform drop-shadow-2xl"
