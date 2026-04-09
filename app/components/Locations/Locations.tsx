@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { MapPin, Ruler, Play } from 'lucide-react';
+import { MapPin, Ruler, Play, ExternalLink } from 'lucide-react';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import { BRANCHES } from '@/app/data/constants';
 import styles from './styles.module.css';
@@ -49,12 +49,22 @@ export default function Locations() {
                             </div>
                             <h4 className={styles.title}>{branch.name}</h4>
                             <p className={styles.address}>{branch.address}</p>
-                            <button
-                                className={styles.cta}
-                                onClick={() => handleGetDirections(branch.id)}
-                            >
-                                View Pricing <Play size={16} className={styles.playIcon} />
-                            </button>
+                            <div className={styles.ctaGroup}>
+                                <button
+                                    className={styles.cta}
+                                    onClick={() => handleGetDirections(branch.id)}
+                                >
+                                    View Pricing <Play size={16} className={styles.playIcon} />
+                                </button>
+                                <a
+                                    href={branch.mapsUrl}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={styles.ctaLocation}
+                                >
+                                    View Location <ExternalLink size={14} />
+                                </a>
+                            </div>
                         </motion.div>
                     ))}
                 </div>
