@@ -7,12 +7,20 @@ interface SectionHeadingProps {
     children: React.ReactNode;
     subtitle?: string;
     light?: boolean;
+    align?: 'left' | 'center';
 }
 
-export default function SectionHeading({ children, subtitle, light = false }: SectionHeadingProps) {
+export default function SectionHeading({ 
+    children, 
+    subtitle, 
+    light = false,
+    align = 'center'
+}: SectionHeadingProps) {
+    const alignmentClass = align === 'left' ? styles.alignLeft : styles.alignCenter;
+
     return (
         <motion.div
-            className={styles.container}
+            className={`${styles.container} ${alignmentClass}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}

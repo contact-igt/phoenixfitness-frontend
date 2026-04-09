@@ -83,21 +83,21 @@ export const BRANCHES: Branch[] = [
 ];
 
 export const GALLERY_IMAGES: GalleryImage[] = [
-  { id: 1, category: 'Strength', url: '/assets/img13.webp', title: 'Free Weights Zone' },
-  { id: 2, category: 'Cardio', url: '/assets/img18.webp', title: 'Treadmill Row' },
-  { id: 3, category: 'Recovery', url: '/assets/steamroom.avif', title: 'Steam Room' },
-  { id: 4, category: 'Strength', url: '/assets/img12.webp', title: 'Squat Racks' },
-  { id: 5, category: 'Community', url: '/assets/img19.webp', title: 'CrossFit Session' },
-  { id: 6, category: 'Cardio', url: '/assets/img16.webp', title: 'Spinning Class' },
-  { id: 7, category: 'Recovery', url: '/assets/img14.webp', title: 'Shower Facilities' },
-  { id: 8, category: 'Community', url: '/assets/img5.webp', title: 'Training Pride' },
-  { id: 9, category: 'Strength', url: '/assets/img21.webp', title: 'Muscle Build' },
-  { id: 10, category: 'Community', url: '/assets/img23.webp', title: 'Clients' },
-  { id: 11, category: 'recovery', url: '/assets/img2.webp', title: 'Pose structure' },
+  { id: 1, category: 'Strength', url: '/assets/img13.jpg', title: 'Free Weights Zone' },
+  { id: 2, category: 'Cardio', url: '/assets/img18.jpg', title: 'Treadmill Row' },
+  { id: 3, category: 'Recovery', url: '/assets/steamroom.jpg', title: 'Steam Room' },
+  { id: 4, category: 'Strength', url: '/assets/img12.jpg', title: 'Squat Racks' },
+  { id: 5, category: 'Community', url: '/assets/img19.jpg', title: 'CrossFit Session' },
+  { id: 6, category: 'Cardio', url: '/assets/img16.jpg', title: 'Spinning Class' },
+  { id: 7, category: 'Recovery', url: '/assets/img14.jpg', title: 'Shower Facilities' },
+  { id: 8, category: 'Community', url: '/assets/img5.jpg', title: 'Training Pride' },
+  { id: 9, category: 'Strength', url: '/assets/img21.jpg', title: 'Muscle Build' },
+  { id: 10, category: 'Community', url: '/assets/img23.jpg', title: 'Clients' },
+  { id: 11, category: 'recovery', url: '/assets/img2.jpg', title: 'Pose structure' },
 ];
 
 export const TRANSFORMATIONS: Transformation[] = [
-  { id: 1, name: 'Vikram S.', result: '-12kg in 3 Months', url: '/assets/img17.webp' },
-  { id: 2, name: 'Sonal M.', result: 'Strength & Muscle Gain', url: '/assets/img15.webp' },
-  { id: 3, name: 'Rajesh K.', result: 'PCOS Transformation', url: '/assets/img3.webp' },
+  { id: 1, name: 'Vikram S.', result: '-12kg in 3 Months', url: '/videos/transformation1.mp4' },
+  { id: 2, name: 'Sonal M.', result: 'Strength & Muscle Gain', url: '/videos/transformation2.mp4' },
+  { id: 3, name: 'Rajesh K.', result: 'PCOS Transformation', url: '/videos/transformation3.mp4' },
 ];

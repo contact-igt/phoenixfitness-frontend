@@ -39,7 +39,7 @@ export default function ThankYouPage() {
                     transition={{ delay: 0.3 }}
                     className={styles.heading}
                 >
-                    RISE FROM THE <span className={styles.highlight}>ASHES</span>
+                    FREE TRIAL <span className={styles.highlight}>SECURED</span>
                 </motion.h1>
 
                 {/* Subheading */}
@@ -49,7 +49,7 @@ export default function ThankYouPage() {
                     transition={{ delay: 0.4 }}
                     className={styles.subheading}
                 >
-                    Your transformation journey begins now!
+                    Welcome to Bengaluru&apos;s Highest-Energy Fitness Temple.
                 </motion.p>
 
                 {/* Message */}
@@ -59,8 +59,8 @@ export default function ThankYouPage() {
                     transition={{ delay: 0.5 }}
                     className={styles.message}
                 >
-                    <p>Thank you for choosing Phoenix Fitness. Our team will contact you shortly to schedule your first session.</p>
-                    <p>Get ready to experience Bengaluru's highest-energy fitness temple.</p>
+                    <p>Your 1-Day Free pass without any commitment is now locked in. Our elite coordinators will contact you shortly to activate your access.</p>
+                    <p>Prepare to unleash your true potential at Phoenix Fitness.</p>
                 </motion.div>
 
                 {/* What's Next Section */}
@@ -70,27 +70,27 @@ export default function ThankYouPage() {
                     transition={{ delay: 0.6 }}
                     className={styles.nextSteps}
                 >
-                    <h2 className={styles.nextStepsHeading}>WHAT'S NEXT?</h2>
+                    <h2 className={styles.nextStepsHeading}>WHAT&apos;S NEXT?</h2>
                     <div className={styles.stepsList}>
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>1</div>
                             <div className={styles.stepContent}>
-                                <h3>Confirmation Call</h3>
-                                <p>Our team will reach out within 24 hours</p>
+                                <h3>Pass Activation</h3>
+                                <p>Our team will reach out within the hour to activate your trial pass</p>
                             </div>
                         </div>
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>2</div>
                             <div className={styles.stepContent}>
                                 <h3>BCA Assessment</h3>
-                                <p>Get your complete body composition analysis</p>
+                                <p>Get your baseline body metrics tracked with medical-grade tech</p>
                             </div>
                         </div>
                         <div className={styles.step}>
                             <div className={styles.stepNumber}>3</div>
                             <div className={styles.stepContent}>
-                                <h3>Start Training</h3>
-                                <p>Get A free 1 Day Trial at your nearest Phoenix Gym. </p>
+                                <h3>Experience the Pride</h3>
+                                <p>Visit any of our 5 locations and rise from the ashes</p>
                             </div>
                         </div>
                     </div>

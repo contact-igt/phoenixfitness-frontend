@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import Button from '../Button/Button';
 import { TRANSFORMATIONS } from '@/app/data/constants';
 import styles from './styles.module.css';
 
@@ -24,16 +25,27 @@ export default function Transformations() {
                             className={styles.card}
                         >
                             <div className={styles.imageWrapper}>
-                                <img src={t.url} className={styles.image} alt={t.name} />
+                                <video
+                                    src={t.url}
+                                    className={styles.image}
+                                    autoPlay
+                                    muted
+                                    loop
+                                    playsInline
+                                />
                                 <div className={styles.overlay}>
-                                    <div className={styles.badge}>Transformation</div>
-                                    {/* <h4 className={styles.name}>{t.name}</h4>
-                                    <p className={styles.result}>{t.result}</p> */}
+                                    <div className={styles.badge}>TRANSFORMATION</div>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </div>
+                <div className="mt-16 flex justify-center">
+                    <Button href="#hero-form" size="lg">
+                        Start Your Transformation
+                    </Button>
+                </div>
+
                 <div className={styles.ctaWrapper}>
                     <a href="#" className={styles.cta}>
                         View All 100+ Stories <ArrowRight size={24} />

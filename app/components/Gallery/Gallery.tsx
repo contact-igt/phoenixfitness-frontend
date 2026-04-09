@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import Button from '../Button/Button';
 import { GALLERY_IMAGES } from '@/app/data/constants';
 import styles from './styles.module.css';
 
@@ -55,6 +56,12 @@ export default function Gallery() {
                         ))}
                     </AnimatePresence>
                 </motion.div>
+                
+                <div className={styles.ctaWrapper}>
+                    <Button href="#hero-form" size="lg">
+                        Join The Community
+                    </Button>
+                </div>
             </div>
         </section>
     );

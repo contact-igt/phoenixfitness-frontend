@@ -7,6 +7,22 @@ import { BRANCHES } from '@/app/data/constants';
 import styles from './styles.module.css';
 
 export default function Locations() {
+
+    const handleGetDirections = (branchId: string) => {
+        // 1. Tell the Pricing component which branch to select
+        window.dispatchEvent(
+            new CustomEvent('selectPricingBranch', { detail: { branchId } })
+        );
+
+        // 2. Smooth scroll to the Pricing section
+        const pricingSection = document.getElementById('pricing');
+        if (pricingSection) {
+            const navHeight = 80;
+            const top = pricingSection.getBoundingClientRect().top + window.scrollY - navHeight;
+            window.scrollTo({ top, behavior: 'smooth' });
+        }
+    };
+
     return (
         <section id="locations" className={styles.section}>
             <div className={styles.container}>
@@ -33,8 +49,11 @@ export default function Locations() {
                             </div>
                             <h4 className={styles.title}>{branch.name}</h4>
                             <p className={styles.address}>{branch.address}</p>
-                            <button className={styles.cta}>
-                                Get Directions <Play size={16} className={styles.playIcon} />
+                            <button
+                                className={styles.cta}
+                                onClick={() => handleGetDirections(branch.id)}
+                            >
+                                View Pricing <Play size={16} className={styles.playIcon} />
                             </button>
                         </motion.div>
                     ))}

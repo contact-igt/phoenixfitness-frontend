@@ -2,11 +2,19 @@
 
 import Image from 'next/image';
 import { Instagram, Facebook, Youtube, Twitter, Mail, Phone } from 'lucide-react';
+import Button from '../Button/Button';
 import styles from './styles.module.css';
 
 export default function Footer() {
     return (
         <footer className={styles.footer}>
+            <div className={styles.ctaSection}>
+                <h2 className={styles.ctaHeading}>Ready to start your <br /> transformation?</h2>
+                <Button href="#hero-form" size="lg" variant="primary">
+                    Claim Your Free Trial
+                </Button>
+            </div>
+
             <div className={styles.container}>
                 <div className={styles.grid}>
                     <div className={styles.brandSection}>
@@ -23,11 +31,15 @@ export default function Footer() {
                             THE ULTIMATE DESTINATION FOR THOSE WHO REFUSE TO SETTLE. JOIN THE PRIDE, RISE FROM THE ASHES.
                         </p>
                         <div className={styles.socialLinks}>
-                            {[Instagram, Facebook, Youtube, Twitter].map((Icon, i) => (
-                                <a key={i} href="#" className={styles.socialIcon}>
-                                    <Icon size={20} />
-                                </a>
-                            ))}
+                            <a href="https://www.instagram.com/phoenixfitness_bangalore/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Instagram size={20} />
+                            </a>
+                            <a href="https://www.facebook.com/phoenixfitnessbanglore/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Facebook size={20} />
+                            </a>
+                            <a href="https://www.youtube.com/channel/UC1q-dfQ2T2euEbMSeJ3_PBA" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
+                                <Youtube size={20} />
+                            </a>
                         </div>
                     </div>
                     <div className={styles.linksSection}>
@@ -42,9 +54,14 @@ export default function Footer() {
                         <h5 className={styles.sectionTitle}>Support</h5>
                         <ul className={styles.contactList}>
                             <li className={styles.contactItem}>
+                                <a href="#locations" className={styles.link} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.75rem' }}>
+                                    LOCATIONS
+                                </a>
+                            </li>
+                            <li className={styles.contactItem}>
                                 <Mail size={16} /> INFO@PHOENIXFITNESS.COM
                             </li>
-                            <li className={styles.contactItem}   >
+                            <li className={styles.contactItem}>
                                 <Phone size={16} /> +91 7795 537 297
                             </li>
                         </ul>

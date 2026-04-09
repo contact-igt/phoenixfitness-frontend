@@ -3,6 +3,7 @@
 import { Wind, ShowerHead, TrendingUp, Users, Dumbbell, Zap, ShieldCheck, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
 import SectionHeading from '../SectionHeading/SectionHeading';
+import Button from '../Button/Button';
 import styles from './styles.module.css';
 
 const benefits = [
@@ -43,6 +44,12 @@ export default function Benefits() {
                             </motion.div>
                         );
                     })}
+                </div>
+                
+                <div className={styles.ctaWrapper}>
+                    <Button href="#hero-form" size="lg">
+                        Claim Your Free Trial
+                    </Button>
                 </div>
             </div>
         </section>

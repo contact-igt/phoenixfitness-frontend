@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import Button from '../Button/Button';
 import styles from './styles.module.css';
 
 export default function Navigation() {
@@ -33,9 +34,9 @@ export default function Navigation() {
                         </a>
                     ))}
                 </div>
-                <button className={styles.ctaButton}>
-                    FREE TRIAL
-                </button>
+                <Button href="#hero-form" size="sm">
+                    Free Trial
+                </Button>
             </div>
         </nav>
     );

@@ -1,0 +1,191 @@
+.formCard {
+    background: linear-gradient(135deg, rgba(14, 14, 16, 0.95) 0%, rgba(9, 9, 11, 0.98) 100%);
+    backdrop-filter: blur(32px);
+    border: 1px solid rgba(187, 13, 6, 0.3);
+    padding: 3.5rem 3rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.5), inset 0 0 40px rgba(187, 13, 6, 0.03);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Corner accent */
+.formCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(225deg, rgba(187, 13, 6, 0.2) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.formHeading {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.25rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    color: white;
+    text-shadow: 0 0 20px rgba(187, 13, 6, 0.2);
+}
+
+.planBadge {
+    background-color: #BB0D06;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 2rem;
+    display: inline-block;
+    border-radius: 0;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.planName {
+    font-style: italic;
+    color: white;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.inputGroup {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.input,
+.select {
+    width: 100%;
+    background-color: rgba(24, 24, 27, 0.4);
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 0;
+    padding: 1.25rem 1rem;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    outline: none;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23BB0D06' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+}
+
+.select option {
+    background-color: rgb(14, 14, 16);
+    color: white;
+}
+
+.input::placeholder {
+    color: rgba(113, 113, 122, 0.5);
+    transition: color 0.3s ease;
+}
+
+.input:focus,
+.select:focus {
+    border-bottom-color: #BB0D06;
+    background-color: rgba(187, 13, 6, 0.05);
+    padding-left: 1.5rem;
+}
+
+.input:focus::placeholder {
+    color: rgba(187, 13, 6, 0.4);
+}
+
+.inputRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+}
+
+.submitButton {
+    width: 100%;
+    background: #BB0D06;
+    padding: 1.5rem;
+    border-radius: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 30px -5px rgba(187, 13, 6, 0.4);
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.submitButton::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.submitButton:hover::after {
+    transform: translateX(100%);
+}
+
+.submitButton:hover:not(:disabled) {
+    background: #e00e07;
+    box-shadow: 0 15px 40px -5px rgba(187, 13, 6, 0.6);
+    transform: translateY(-2px);
+}
+
+.submitButton:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+.submitButton:disabled {
+    opacity: 0.5;
+    background: #444;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.errorText {
+    color: #BB0D06;
+    font-size: 0.65rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-top: 0.5rem;
+    position: absolute;
+    bottom: -1.25rem;
+}
+
+@media (max-width: 640px) {
+    .formCard {
+        padding: 2.5rem 1.5rem;
+    }
+    
+    .inputRow {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .formHeading {
+        font-size: 1.75rem;
+    }
+}
