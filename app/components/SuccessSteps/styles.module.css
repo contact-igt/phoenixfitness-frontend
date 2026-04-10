@@ -34,7 +34,7 @@
 
 .stepNumber {
     font-family: 'Anton', sans-serif;
-    font-size: 4.5rem;
+    font-size: clamp(3rem, 10vw, 4.5rem);
     color: rgba(187, 13, 6, 0.05);
     position: absolute;
     bottom: 1rem;
@@ -81,6 +81,20 @@
     text-transform: uppercase;
     letter-spacing: -0.05em;
     line-height: 1.75;
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
 }
 
 @media (min-width: 768px) {

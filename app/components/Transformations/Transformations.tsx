@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowRight, Play, Pause } from 'lucide-react';
 import SectionHeading from '../SectionHeading/SectionHeading';
 import Button from '../Button/Button';
-import { TRANSFORMATIONS } from '@/app/data/constants';
+import { TRANSFORMATIONS, type Transformation } from '@/app/data/constants';
 import styles from './styles.module.css';
 
 const TransformationCard = ({ 
@@ -14,7 +14,7 @@ const TransformationCard = ({
     activeId, 
     setActiveId 
 }: { 
-    transformation: any; 
+    transformation: Transformation; 
     index: number; 
     activeId: number | null; 
     setActiveId: (id: number | null) => void;

@@ -1,7 +1,7 @@
-'use client';
+﻿'use client';
 
 import Image from 'next/image';
-import { Instagram, Facebook, Youtube, Twitter, Mail, Phone } from 'lucide-react';
+import { Instagram, Facebook, Youtube, Mail, Phone } from 'lucide-react';
 import Button from '../Button/Button';
 import styles from './styles.module.css';
 
@@ -59,18 +59,21 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className={styles.contactItem}>
-                                <Mail size={16} /><a href="mailto:info@phoenixfitness.com">INFO@PHOENIXFITNESS.COM</a>
+                                <Mail size={16} />
+                                <a href="mailto:info@phoenixfitness.com">INFO@PHOENIXFITNESS.COM</a>
                             </li>
                             <li className={styles.contactItem}>
-                                <Phone size={16} /> <a href="tel:+917795537297">+91 7795 537 297</a>
+                                <Phone size={16} />
+                                <a href="tel:+917795537297">+91 7795 537 297</a>
                             </li>
                         </ul>
                     </div>
                 </div>
                 <p className={styles.copyright}>
-                    &copy; 2025 PHOENIX FITNESS • POWER • DISCIPLINE • PERFORMANCE
+                    &copy; 2026 PHOENIX FITNESS • POWER • DISCIPLINE • PERFORMANCE
                 </p>
             </div>
         </footer>
     );
 }
+

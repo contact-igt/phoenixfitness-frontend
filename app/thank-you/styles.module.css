@@ -75,7 +75,7 @@
 
 .heading {
     font-family: 'Anton', sans-serif;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 9vw, 5.5rem);
     font-weight: 900;
     line-height: 1;
     margin-bottom: 1.5rem;
@@ -92,7 +92,7 @@
 }
 
 .subheading {
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 4vw, 1.5rem);
     font-weight: 700;
     color: rgb(161, 161, 170);
     margin-bottom: 2.5rem;
@@ -197,7 +197,7 @@
     padding: 1.25rem 2.5rem;
     border-radius: 0.25rem;
     font-family: 'Anton', sans-serif;
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 3.5vw, 1.25rem);
     text-transform: uppercase;
     letter-spacing: 0.15em;
     color: white;
@@ -266,5 +266,38 @@
     .icon {
         width: 6rem;
         height: 6rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1.25rem 1rem;
+    }
+
+    .message,
+    .nextSteps {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .message p {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .step {
+        gap: 1rem;
+    }
+
+    .stepNumber {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    .ctaButton {
+        width: 100%;
+        justify-content: center;
+        letter-spacing: 0.08em;
+        padding: 1rem 1.25rem;
     }
 }

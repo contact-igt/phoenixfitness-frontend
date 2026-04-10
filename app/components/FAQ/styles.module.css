@@ -22,3 +22,13 @@
     gap: 1rem;
     margin-top: 2rem;
 }
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+}

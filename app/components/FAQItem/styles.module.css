@@ -12,6 +12,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1rem;
     text-align: left;
     background: none;
     border: none;
@@ -24,6 +25,8 @@
     font-weight: 700;
     color: white;
     transition: color 0.3s ease;
+    min-width: 0;
+    line-height: 1.4;
 }
 
 .button:hover .question {
@@ -59,6 +62,16 @@
 
 @media (min-width: 768px) {
     .answer {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .button {
+        padding: 1.25rem 0;
+    }
+
+    .question {
         font-size: 1rem;
     }
 }

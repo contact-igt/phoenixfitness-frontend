@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Star } from 'lucide-react';
+import { Instagram, MapPin } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
@@ -12,8 +12,6 @@ import Transformations from './components/Transformations/Transformations';
 import Gallery from './components/Gallery/Gallery';
 import Benefits from './components/Benefits/Benefits';
 import Locations from './components/Locations/Locations';
-import FAQItem from './components/FAQItem/FAQItem';
-import SectionHeading from './components/SectionHeading/SectionHeading';
 import StatsBar from './components/StatsBar/StatsBar';
 import FAQ from './components/FAQ/FAQ';
 // import FloatingCTA, { MobileStickyCTA } from './components/FloatingCTA';
@@ -42,7 +40,7 @@ export default function Home() {
       <FAQ />
 
       {/* Floating Action Buttons */}
-      <div className="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+      <div className="fixed bottom-5 right-4 z-[100] flex flex-col gap-3 sm:bottom-8 sm:right-8 sm:gap-4 md:hidden">
         {/* WhatsApp */}
         <motion.a
           href="https://wa.me/917795537297"
@@ -53,7 +51,7 @@ export default function Home() {
           <img 
             src="/assets/whatsapp.png" 
             alt="WhatsApp Chat" 
-            className="w-13 h-13 object-contain"
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14"
           />
         </motion.a>
 
@@ -67,8 +65,32 @@ export default function Home() {
           <img 
             src="/assets/phone-call.png" 
             alt="Call Us" 
-            className="w-13 h-13 object-contain"
+            className="h-12 w-12 object-contain sm:h-14 sm:w-14"
           />
+        </motion.a>
+
+        {/* Instagram */}
+        <motion.a
+          href="https://www.instagram.com/phoenixfitness_bangalore/"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-pink-500 via-rose-500 to-purple-600 text-white shadow-2xl sm:h-14 sm:w-14"
+          aria-label="Instagram"
+        >
+          <Instagram size={24} />
+        </motion.a>
+
+        {/* Location */}
+        <motion.a
+          href="#locations"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          className="flex h-12 w-12 items-center justify-center rounded-full bg-[#BB0D06] text-white shadow-2xl sm:h-14 sm:w-14"
+          aria-label="View Locations"
+        >
+          <MapPin size={24} />
         </motion.a>
       </div>
 
