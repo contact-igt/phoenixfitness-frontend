@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
@@ -28,7 +28,7 @@ interface LeadFormProps {
     showTitle?: boolean;
 }
 
-export default function LeadForm({ title = "Get your chance to start your free trial", showTitle = true }: LeadFormProps) {
+function LeadFormInner({ title = "Get your chance to start your free trial", showTitle = true }: LeadFormProps) {
     const searchParams = useSearchParams();
     const plan = searchParams.get('plan');
     const [isLoading, setIsLoading] = useState(false);
@@ -122,7 +122,7 @@ export default function LeadForm({ title = "Get your chance to start your free t
                     PLAN: <span className={styles.planName}>{plan.replace('-', ' ')}</span>
                 </div>
             )}
-            
+
             <form className={styles.form} onSubmit={handleFormSubmit} noValidate>
                 <div className={styles.inputGroup}>
                     <input
@@ -179,5 +179,13 @@ export default function LeadForm({ title = "Get your chance to start your free t
                 </button>
             </form>
         </div>
+    );
+}
+
+export default function LeadForm(props: LeadFormProps) {
+    return (
+        <Suspense fallback={null}>
+            <LeadFormInner {...props} />
+        </Suspense>
     );
 }
