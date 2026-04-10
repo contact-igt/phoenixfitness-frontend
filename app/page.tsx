@@ -67,7 +67,7 @@ export default function Home() {
           <img 
             src="/assets/phone-call.png" 
             alt="Call Us" 
-            className="w-16 h-16 object-contain"
+            className="w-13 h-13 object-contain"
           />
         </motion.a>
       </div>

@@ -19,7 +19,7 @@ export default function Navigation() {
             <div className={styles.container}>
                 <div className={styles.logoContainer}>
                     <Image
-                        src="/assets/logo1.png"
+                         src="/assets/logo1.webp"
                         alt="Phoenix Fitness Logo"
                         width={180}
                         height={70}
