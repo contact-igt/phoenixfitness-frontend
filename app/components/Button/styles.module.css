@@ -1,7 +1,18 @@
+.motionWrapper {
+    display: inline-block;
+    max-width: 100%;
+}
+
+.fullWidth {
+    display: block;
+    width: 100%;
+}
+
 .button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
     font-family: 'Anton', sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -70,4 +81,21 @@
     opacity: 0.5;
     cursor: not-allowed;
     transform: none !important;
+}
+
+@media (max-width: 480px) {
+    .lg {
+        padding: 1rem 1.75rem;
+        font-size: 1.25rem;
+    }
+
+    .md {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .sm {
+        padding: 0.5rem 0.9rem;
+        font-size: 0.75rem;
+    }
 }

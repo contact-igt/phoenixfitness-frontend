@@ -80,13 +80,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: clamp(56px, 12vw, 80px);
+    height: clamp(56px, 12vw, 80px);
 }
 
 .playButton {
-    width: 80px;
-    height: 80px;
+    width: clamp(56px, 12vw, 80px);
+    height: clamp(56px, 12vw, 80px);
     background-color: #BB0D06;
     border-radius: 50%;
     display: flex;
@@ -99,8 +99,8 @@
 }
 
 .pauseButton {
-    width: 80px;
-    height: 80px;
+    width: clamp(56px, 12vw, 80px);
+    height: clamp(56px, 12vw, 80px);
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(10px);
     border-radius: 50%;
@@ -159,12 +159,13 @@
     gap: 1rem;
     color: #BB0D06;
     font-family: 'Anton', sans-serif;
-    font-size: 1.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.5rem);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-style: italic;
     text-decoration: none;
     transition: gap 0.3s ease;
+    overflow-wrap: anywhere;
 }
 
 .cta:hover {
@@ -180,5 +181,36 @@
 @media (min-width: 1024px) {
     .grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .grid {
+        gap: 2rem;
+    }
+
+    .overlay {
+        padding: 1.25rem;
+    }
+
+    .name {
+        font-size: 1.4rem;
+    }
+
+    .cta {
+        letter-spacing: 0.06em;
+        gap: 0.6rem;
+    }
+
+    .cta:hover {
+        gap: 1rem;
     }
 }

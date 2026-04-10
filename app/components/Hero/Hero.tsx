@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import { Wind, ShowerHead, TrendingUp, Users, Dumbbell, Zap, ShieldCheck, CheckCircle } from 'lucide-react';
 import styles from './styles.module.css';
 import LeadForm from '../LeadForm/LeadForm';
-import Button from '../Button/Button';
 
 const AMENITIES = [
     { icon: Wind, label: 'Steam Room' },
@@ -26,7 +25,7 @@ export default function Hero() {
         <section className={styles.hero}>
             <div className={styles.background}>
                 <img
-                    src={"/assets/herobanner.webp"}
+                    src={"/assets/herobanner.jpg"}
                     className={styles.backgroundImage}
                     alt="Gym"
                 />
@@ -46,8 +45,11 @@ export default function Hero() {
                         </span>
 
                         <div className={styles.heading}>
-                            <h1><span className={styles.headingGradient}>1 day free</span> trial</h1>
-                            <h1>without any commitment</h1>
+                            <h1 className={styles.headingLinePrimary}>
+                                <span className={styles.headingAccent}>1 Day Free</span>
+                                <span className={styles.headingSolid}>Trial</span>
+                            </h1>
+                            <h1 className={styles.headingLineSecondary}>Without Any Commitment</h1>
                         </div>
 
                         <p className={styles.description}>

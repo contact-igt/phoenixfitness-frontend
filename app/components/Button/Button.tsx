@@ -27,6 +27,7 @@ export default function Button({
     disabled = false
 }: ButtonProps) {
     const combinedClassName = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`;
+    const isFullWidth = /\bw-full\b/.test(className);
 
     // For anchor links (#something), use JS scroll so repeated clicks always work
     // and so we can account for the fixed navbar height
@@ -52,7 +53,7 @@ export default function Button({
         <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block"
+            className={`${styles.motionWrapper} ${isFullWidth ? styles.fullWidth : ''}`}
         >
             {isAnchor ? (
                 <a

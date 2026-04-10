@@ -37,7 +37,6 @@ function LeadFormInner({ title = "Get your chance to start your free trial", sho
         register,
         handleSubmit,
         formState: { errors },
-        reset,
     } = useForm<FormData>({
         resolver: zodResolver(formSchema),
     });

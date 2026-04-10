@@ -84,3 +84,17 @@
     justify-content: center;
     margin-top: 4rem;
 }
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .grid {
+        gap: 2rem;
+    }
+}

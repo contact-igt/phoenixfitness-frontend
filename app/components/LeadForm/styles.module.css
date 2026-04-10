@@ -24,7 +24,7 @@
 
 .formHeading {
     font-family: 'Anton', sans-serif;
-    font-size: 2.25rem;
+    font-size: clamp(1.75rem, 6vw, 2.25rem);
     margin-bottom: 2rem;
     text-align: center;
     text-transform: uppercase;
@@ -46,6 +46,8 @@
     display: inline-block;
     border-radius: 0;
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .planName {
@@ -120,7 +122,7 @@
     padding: 1.5rem;
     border-radius: 0;
     font-family: 'Anton', sans-serif;
-    font-size: 1.75rem;
+    font-size: clamp(1.1rem, 5vw, 1.75rem);
     text-transform: uppercase;
     letter-spacing: 0.1em;
     color: white;
@@ -187,5 +189,31 @@
 
     .formHeading {
         font-size: 1.75rem;
+    }
+
+    .form {
+        gap: 1.5rem;
+    }
+
+    .input,
+    .select {
+        padding: 1rem 0.9rem;
+        font-size: 0.8rem;
+    }
+
+    .submitButton {
+        letter-spacing: 0.06em;
+        padding: 1.1rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .formCard {
+        padding: 2rem 1rem;
+    }
+
+    .planBadge {
+        letter-spacing: 0.1em;
+        font-size: 0.62rem;
     }
 }

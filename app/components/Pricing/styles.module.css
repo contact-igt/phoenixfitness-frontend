@@ -15,9 +15,8 @@
 }
 
 .branchSelector {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
     gap: 1rem;
     margin-bottom: 4rem;
 }
@@ -36,6 +35,8 @@
     background-color: rgb(24, 24, 27);
     color: rgb(113, 113, 122);
     border-color: rgb(39, 39, 42);
+    width: 100%;
+    overflow-wrap: anywhere;
 }
 
 .branchButton:hover {
@@ -102,7 +103,7 @@
 
 .price {
     font-family: 'Anton', sans-serif;
-    font-size: 3.75rem;
+    font-size: clamp(2.25rem, 8vw, 3.75rem);
 }
 
 .originalPrice {
@@ -259,4 +260,35 @@
     display: flex;
     justify-content: center;
     margin-top: 4rem;
+}
+
+/* Keep cards stable in mobile/tablet grids where scale() can cause overflow */
+@media (max-width: 1023px) {
+    .cardPopular {
+        transform: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 4rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .branchButton {
+        font-size: 0.95rem;
+        padding: 0.65rem 1rem;
+        letter-spacing: 0.06em;
+    }
+
+    .grid {
+        gap: 1.25rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
 }
