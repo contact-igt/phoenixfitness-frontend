@@ -20,7 +20,7 @@ export default function Footer() {
                     <div className={styles.brandSection}>
                         <div className={styles.logoContainer}>
                             <Image
-                                src="/assets/logo1.png"
+                                src="/assets/logo1.webp"
                                 alt="Phoenix Fitness Logo"
                                 width={180}
                                 height={70}
@@ -59,10 +59,10 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li className={styles.contactItem}>
-                                <Mail size={16} /> INFO@PHOENIXFITNESS.COM
+                                <Mail size={16} /><a href="mailto:info@phoenixfitness.com">INFO@PHOENIXFITNESS.COM</a>
                             </li>
                             <li className={styles.contactItem}>
-                                <Phone size={16} /> +91 7795 537 297
+                                <Phone size={16} /> <a href="tel:+917795537297">+91 7795 537 297</a>
                             </li>
                         </ul>
                     </div>
