@@ -85,10 +85,7 @@
 }
 
 .highlight {
-    background: linear-gradient(to right, #BB0D06, rgb(127, 29, 29));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+    color: #BB0D06;
 }
 
 .subheading {
