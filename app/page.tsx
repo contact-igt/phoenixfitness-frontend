@@ -14,9 +14,11 @@ import Benefits from './components/Benefits/Benefits';
 import Locations from './components/Locations/Locations';
 import StatsBar from './components/StatsBar/StatsBar';
 import FAQ from './components/FAQ/FAQ';
+import useUTMSource from "./hooks/useUTMSource";
 // import FloatingCTA, { MobileStickyCTA } from './components/FloatingCTA';
 
 export default function Home() {
+  useUTMSource();
   return (
     <div className="bg-zinc-950 text-white selection:bg-[#BB0D06] font-['Inter']">
       <Navigation />
