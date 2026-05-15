@@ -78,7 +78,7 @@ function LeadFormInner({ title = "Get your chance to start your free trial", sho
     const handleGoogleSheetForm = async (formData: URLSearchParams, retries = 3, delay = 1500): Promise<boolean> => {
         try {
             const res = await fetch(
-                "https://script.google.com/macros/s/AKfycbyrghBZ8MIWxUcj2VUhH15lWl8x00zYLS9_Do7NvIV1ftZkag6jOjfa5a_E-F0NnG/exec",
+                "https://script.google.com/macros/s/AKfycbxY4TV97Dlpqpu61anIrQ32JM8QdKLRvDhSLqpuluAaWyKUNWbpraYMa_Wf0AkujXAB/exec",
                 {
                     method: "POST",
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
