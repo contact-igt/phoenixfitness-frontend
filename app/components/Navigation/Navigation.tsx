@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { Phone } from 'lucide-react';
 import Button from '../Button/Button';
 import styles from './styles.module.css';
 
@@ -34,9 +35,16 @@ export default function Navigation() {
                         </a>
                     ))}
                 </div>
-                <Button href="#hero-form" size="sm">
-                    Free Trial
-                </Button>
+
+                <div className={styles.actions}>
+                    <a href="tel:+917795537297" className={styles.callButton} aria-label="Call Phoenix Fitness">
+                        <Phone size={16} strokeWidth={2.5} />
+                        <span>Call Now</span>
+                    </a>
+                    <Button href="#hero-form" size="sm">
+                        Free Trial
+                    </Button>
+                </div>
             </div>
         </nav>
     );
