@@ -14,7 +14,6 @@ export interface Branch {
   mapsUrl: string;
   offers: Offer[];
 }
-
 export interface GalleryImage {
   id: number;
   category: string;
