@@ -18,7 +18,6 @@ export default function Pricing() {
             const branch = BRANCHES.find(b => b.id === branchId);
             if (branch) setSelectedBranch(branch);
         };
-
         window.addEventListener('selectPricingBranch', handleBranchSelect);
         return () => window.removeEventListener('selectPricingBranch', handleBranchSelect);
     }, []);
