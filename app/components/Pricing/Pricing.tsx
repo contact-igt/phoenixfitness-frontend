@@ -47,8 +47,10 @@ export default function Pricing() {
                     ))}
                 </div>
 
-                <div className={styles.grid}>
-                    {selectedBranch.offers.map((offer, i) => (
+                {/* Gym Membership Plans Row */}
+                <div className={styles.rowHeading}>Gym Membership</div>
+                <div className={styles.gymGrid}>
+                    {selectedBranch.offers.filter(o => o.category === 'gym').map((offer, i) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 20 }}
@@ -83,7 +85,43 @@ export default function Pricing() {
                             </div>
 
                             <div className="mt-auto">
-                                <Button 
+                                <Button
+                                    href={`#hero-form`}
+                                    className="w-full"
+                                    variant={offer.popular ? 'primary' : 'secondary'}
+                                >
+                                    Choose Plan
+                                </Button>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Personal Training Row */}
+                <div className={styles.rowHeading}>Personal Training</div>
+                <div className={styles.ptGrid}>
+                    {selectedBranch.offers.filter(o => o.category === 'pt').map((offer, i) => (
+                        <motion.div
+                            key={i}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: i * 0.1 }}
+                            className={`${styles.card} ${offer.popular ? styles.cardPopular : ''}`}
+                        >
+                            {offer.popular && (
+                                <div className={styles.popularBadge}>Most Popular</div>
+                            )}
+                            <h4 className={styles.cardTitle}>{offer.title}</h4>
+
+                            <div className={styles.priceContainer}>
+                                <div className={styles.price}>₹{offer.price}</div>
+                                <div className={styles.originalPrice}>₹{offer.originalPrice}</div>
+                            </div>
+
+
+                            <div className="mt-auto">
+                                <Button
                                     href={`#hero-form`}
                                     className="w-full"
                                     variant={offer.popular ? 'primary' : 'secondary'}

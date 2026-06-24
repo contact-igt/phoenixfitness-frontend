@@ -64,6 +64,7 @@
 .inputGroup {
     position: relative;
     display: flex;
+    min-width: 0;
     flex-direction: column;
 }
 
@@ -119,7 +120,7 @@
 
 .inputRow {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
 }
 
@@ -179,9 +180,12 @@
     font-weight: 900;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    line-height: 1.2;
     margin-top: 0.5rem;
     position: absolute;
     bottom: -1.25rem;
+    max-width: 100%;
+    overflow-wrap: anywhere;
 }
 
 @media (max-width: 640px) {
@@ -206,6 +210,10 @@
     .select {
         padding: 1rem 0.9rem;
         font-size: 0.8rem;
+    }
+
+    .select {
+        padding-right: 3rem;
     }
 
     .submitButton {
