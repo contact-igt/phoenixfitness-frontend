@@ -5,15 +5,9 @@ import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { useSearchParams } from 'next/navigation';
+import { BRANCHES } from '@/app/data/constants';
+import useUTMSource from '@/app/hooks/useUTMSource';
 import styles from './styles.module.css';
-
-const BRANCHES = [
-    { id: 'budegere', name: 'Budegere Cross' },
-    { id: 'kannamangala', name: 'Kannamangala' },
-    { id: 'nallurhalli', name: 'Nallurhalli' },
-    { id: 'yello', name: 'Yello Living (ITPL)' },
-    { id: 'hopefarm', name: 'Hope Farm' }
-];
 
 const formSchema = z.object({
     name: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -29,9 +23,12 @@ interface LeadFormProps {
 }
 
 function LeadFormInner({ title = "Get your chance to start your free trial", showTitle = true }: LeadFormProps) {
+    useUTMSource();
+
     const searchParams = useSearchParams();
     const plan = searchParams.get('plan');
     const [isLoading, setIsLoading] = useState(false);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const {
         register,
@@ -44,66 +41,65 @@ function LeadFormInner({ title = "Get your chance to start your free trial", sho
     const onSubmit = async (data: FormData) => {
         try {
             setIsLoading(true);
-            const ipResponse = await fetch("https://api.ipify.org?format=json");
-            const ipData = await ipResponse.json();
+            setSubmitError(null);
 
-            const formData = {
-                name: data.name,
-                phone: `+91${data.phone}`,
+            const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
+            const clientKey = process.env.NEXT_PUBLIC_PHOENIX_CLIENT_KEY;
+
+            if (!apiBaseUrl || !clientKey) {
+                throw new Error("Phoenix Fitness API configuration is missing.");
+            }
+
+            const ipResponse = await fetch("https://api.ipify.org?format=json");
+            if (!ipResponse.ok) {
+                throw new Error("Unable to determine the visitor IP address.");
+            }
+
+            const ipData: { ip?: string } = await ipResponse.json();
+            if (!ipData.ip) {
+                throw new Error("The visitor IP address was not returned.");
+            }
+
+            const payload = {
+                name: data.name.trim(),
+                mobile_number: `+91 ${data.phone}`,
                 branch: data.branch,
-                plan: plan || 'General Interest',
+                utm_source: localStorage.getItem("utm_source") || "website",
                 ip_address: ipData.ip,
-                utm_source: typeof window !== 'undefined' ? localStorage.getItem("utm_source") : null,
             };
 
-            const params = new URLSearchParams();
-            (Object.keys(formData) as Array<keyof typeof formData>).forEach((key) => {
-                const value = formData[key as keyof typeof formData];
-                params.append(key, value != null ? String(value) : "");
+            const response = await fetch(`${apiBaseUrl}/phoenix-fitness/register`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-Client-Key": clientKey,
+                },
+                body: JSON.stringify(payload),
             });
 
-            await handleGoogleSheetForm(params);
+            if (!response.ok) {
+                let message = "Registration failed. Please try again.";
 
-            if (typeof window !== 'undefined') {
-                window.location.href = "/thank-you";
+                try {
+                    const errorBody = await response.json();
+                    message = errorBody.message || errorBody.error || message;
+                } catch {
+                    // Keep the fallback message when the API does not return JSON.
+                }
+
+                throw new Error(message);
             }
+
+            window.location.assign("/thank-you");
         } catch (error) {
             console.error("Error submitting form:", error);
-            alert("There was an error submitting your form. Please try again.");
+            setSubmitError(
+                error instanceof Error
+                    ? error.message
+                    : "There was an error submitting your form. Please try again."
+            );
         } finally {
             setIsLoading(false);
-        }
-    };
-
-    const handleGoogleSheetForm = async (formData: URLSearchParams, retries = 3, delay = 1500): Promise<boolean> => {
-        try {
-            const res = await fetch(
-                "https://script.google.com/macros/s/AKfycbxY4TV97Dlpqpu61anIrQ32JM8QdKLRvDhSLqpuluAaWyKUNWbpraYMa_Wf0AkujXAB/exec",
-                {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: formData.toString(),
-                }
-            );
-
-            const text = await res.text();
-            console.log("Google Sheet Response:", text);
-
-            if (res.ok) {
-                return true;
-            } else {
-                throw new Error("Sheet responded with non-OK");
-            }
-        } catch (err) {
-            console.error(`Google Sheet attempt failed. Retries left: ${retries}`, err);
-
-            if (retries <= 1) {
-                console.error("Google Sheet failed permanently!");
-                return false;
-            }
-
-            await new Promise((resolve) => setTimeout(resolve, delay));
-            return handleGoogleSheetForm(formData, retries - 1, delay);
         }
     };
 
@@ -157,9 +153,9 @@ function LeadFormInner({ title = "Get your chance to start your free trial", sho
                             disabled={isLoading}
                         >
                             <option value="">SELECT BRANCH</option>
-                            {BRANCHES.map(b => (
-                                <option key={b.id} value={b.name}>
-                                    {b.name.toUpperCase()}
+                            {BRANCHES.map((branch) => (
+                                <option key={branch.id} value={branch.name}>
+                                    {branch.name.toUpperCase()}
                                 </option>
                             ))}
                         </select>
@@ -176,6 +172,12 @@ function LeadFormInner({ title = "Get your chance to start your free trial", sho
                 >
                     {isLoading ? 'SUBMITTING...' : 'CLAIM FREE TRIAL'}
                 </button>
+
+                {submitError && (
+                    <p className={styles.errorText} role="alert">
+                        {submitError}
+                    </p>
+                )}
             </form>
         </div>
     );
