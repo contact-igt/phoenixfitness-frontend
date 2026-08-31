@@ -8,6 +8,16 @@ import Button from '../Button/Button';
 import { BRANCHES } from '@/app/data/constants';
 import styles from './styles.module.css';
 
+const PLAN_FEATURES: Record<string, string[]> = {
+    'Monthly Plan': ['Flexible monthly gym access.', 'Use of cardio and strength machines.', 'Locker room and shower facilities.', 'No long-term commitment required.'],
+    'Quarterly Plan': ['3 months gym membership access.', 'Cardio, strength, and free weight access.', 'Locker room and shower facilities.', '15 days freezing option included.'],
+    'Half-Yearly Plan': ['6 months standard membership access.', 'Cardio, strength, and free weight access.', 'Locker room and shower facilities.', '30 days freezing option included.'],
+    'Yearly Plan': ['12 months committed membership access.', 'Cardio, strength, and free weight access.', 'Locker room and shower facilities.', '45 days freezing option included.'],
+    'PT Level 1': ['Fitness assessment.', 'Workout programming.', 'Form correction.', 'Basic progress tracking.'],
+    'PT Level 2': ['Advanced programming.', 'Nutrition guidance.', 'Weekly progress reviews.', 'Accountability support.'],
+    'PT Level 3': ['Complete transformation plan.', 'Personalized nutrition.', 'Priority trainer support.', 'Detailed progress analytics.'],
+};
+
 export default function Pricing() {
     const [selectedBranch, setSelectedBranch] = useState(BRANCHES[0]);
 
@@ -73,14 +83,12 @@ export default function Pricing() {
                                     <Zap className={styles.perkIcon} />
                                     <span className={styles.perkText}>{offer.perks}</span>
                                 </div>
-                                <div className={styles.perkSecondary}>
-                                    <CheckCircle className={styles.perkIconSecondary} />
-                                    <span>Free BCA + Diet Guidelines</span>
-                                </div>
-                                <div className={styles.perkSecondary}>
-                                    <CheckCircle className={styles.perkIconSecondary} />
-                                    <span>2 Onboarding Sessions FREE</span>
-                                </div>
+                                {PLAN_FEATURES[offer.title].map(feature => (
+                                    <div key={feature} className={styles.perkSecondary}>
+                                        <CheckCircle className={styles.perkIconSecondary} />
+                                        <span>{feature}</span>
+                                    </div>
+                                ))}
                             </div>
 
                             <div className="mt-auto">
@@ -118,6 +126,18 @@ export default function Pricing() {
                                 <div className={styles.originalPrice}>₹{offer.originalPrice}</div>
                             </div>
 
+                            <div className={styles.perks}>
+                                <div className={styles.perk}>
+                                    <Zap className={styles.perkIcon} />
+                                    <span className={styles.perkText}>{offer.perks}</span>
+                                </div>
+                                {PLAN_FEATURES[offer.title].map(feature => (
+                                    <div key={feature} className={styles.perkSecondary}>
+                                        <CheckCircle className={styles.perkIconSecondary} />
+                                        <span>{feature}</span>
+                                    </div>
+                                ))}
+                            </div>
 
                             <div className="mt-auto">
                                 <Button
