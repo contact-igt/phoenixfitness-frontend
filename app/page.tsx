@@ -45,7 +45,7 @@ export default function Home() {
       <div className="fixed bottom-5 right-4 z-[100] flex flex-col gap-3 sm:bottom-8 sm:right-8 sm:gap-4 md:hidden">
         {/* WhatsApp */}
         <motion.a
-          href="https://wa.me/917795537297"
+          href="https://wa.me/919880537297"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="transition-transform drop-shadow-2xl"
@@ -59,7 +59,7 @@ export default function Home() {
 
         {/* Phone */}
         <motion.a
-          href="tel:+917795537297"
+          href="tel:+919880537297"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="transition-transform drop-shadow-2xl"

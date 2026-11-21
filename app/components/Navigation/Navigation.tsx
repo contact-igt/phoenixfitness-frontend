@@ -37,7 +37,7 @@ export default function Navigation() {
                 </div>
 
                 <div className={styles.actions}>
-                    <a href="tel:+917795537297" className={styles.callButton} aria-label="Call Phoenix Fitness">
+                    <a href="tel:+919880537297" className={styles.callButton} aria-label="Call Phoenix Fitness">
                         <Phone size={16} strokeWidth={2.5} />
                         <span>Call Now</span>
                     </a>

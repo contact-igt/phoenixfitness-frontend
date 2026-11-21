@@ -64,7 +64,7 @@ export default function Footer() {
                             </li>
                             <li className={styles.contactItem}>
                                 <Phone size={16} />
-                                <a href="tel:+917795537297">+91 7795 537 297</a>
+                                <a href="tel:+919880537297">+91 98805 37297</a>
                             </li>
                         </ul>
                     </div>
