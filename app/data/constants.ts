@@ -128,7 +128,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
 ];
 
 export const TRANSFORMATIONS: Transformation[] = [
-  { id: 1, name: 'Vikram S.', result: '-12kg in 3 Months', url: '/videos/transformation1.mp4' },
-  { id: 2, name: 'Sonal M.', result: 'Strength & Muscle Gain', url: '/videos/transformation2.mp4' },
-  { id: 3, name: 'Rajesh K.', result: 'PCOS Transformation', url: '/videos/transformation3.mp4', poster: '/assets/transformation3.png' },
+  { id: 1, name: 'Swathi', result: '-12kg in 3 Months', url: '/videos/transformation1.mp4' },
+  { id: 2, name: 'Vijay', result: 'Strength & Muscle Gain', url: '/videos/transformation2.mp4' },
+  { id: 3, name: 'Dev', result: '10 Months, Real Strength Gains', url: '/videos/dev-testimonial.mp4', poster: '/assets/dev-testimonial.png' },
 ];
